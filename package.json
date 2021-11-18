@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    //"test"を消して以下2行を追加 
     "build": "webpack --mode=production",
     "start": "webpack-cli serve --mode develop"
   },
