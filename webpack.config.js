@@ -6,13 +6,15 @@ module.exports ={
   },
   output: {
     path: path.join(__dirname, 'dist'),//3 webpackでバンドルしたファイルをどこに出力するか
-    filename: '[name].js'//4 バンドル後のファイル名
+    filename: '[name].js'//4 バンドル後のファイル名 [name]はentryで記述した名前（この設定ならbundle）
   },
   resolve: {
     extensions: ['.ts', '.js']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),//devserverが参照するディレクトリ
+    static: {
+      directory: path.join(__dirname, 'dist'),//devserverが参照するディレクトリ
+    },
     open: true//ローカルのwebサーバーを立ち上げた際にブラウザを自動で立ち上げる
   },
   module: {//モジュールのルールを書く
